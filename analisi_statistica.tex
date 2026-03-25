@@ -1,0 +1,735 @@
+\documentclass[12pt, a4paper]{article}
+
+% \usepackage[italian]{babel}  % requires texlive-lang-italian
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+%\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=3cm,
+    right=3cm,
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{\thesection.\quad}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{\thesubsection.\quad}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small Analisi Statistica -- RIPoSt}
+\lhead{\small Disregolazione Emotiva in ADHD}
+\cfoot{\thepage}
+
+\newcommand{\rhosym}{\ensuremath{\varrho}}
+\newcommand{\nota}[1]{\vspace{0.4em}\noindent\colorbox{gray!15}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small\textbf{Nota clinica:} #1}}\vspace{0.4em}}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\LARGE\bfseries Analisi Statistica della Disregolazione Emotiva\\[0.5em]
+    in Pazienti Adulti con ADHD\par}
+    \vspace{1.5cm}
+    {\large Utilizzo del Questionario RIPoSt e della sua Versione di Screening (RIPoSt-SV)\par}
+    \vspace{2cm}
+    {\normalsize Documento tecnico a supporto della tesi di laurea\par}
+    \vspace{0.5cm}
+    {\normalsize Scritto per studenti di medicina -- non è richiesta una formazione statistica avanzata\par}
+    \vspace{3cm}
+    {\small Marzo 2026}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Introduzione e obiettivi dello studio}
+
+\subsection{Contesto clinico}
+
+La disregolazione emotiva (DE) è una delle caratteristiche più pervasive e invalidanti
+dell'ADHD nell'adulto, spesso più impattante sulla qualità di vita dei sintomi attentivi o
+iperattivi stessi. Si manifesta tipicamente come una combinazione di:
+
+\begin{itemize}
+    \item \textbf{Scatti d'ira e reazioni esplosive di breve durata} -- perdita transitoria del
+          controllo, facile irritabilità, litigi frequenti
+    \item \textbf{Labilità affettiva} -- oscillazioni rapide dell'umore tra normale, depresso o
+          euforico, che durano ore o al massimo qualche giorno
+    \item \textbf{Iper-reattività emotiva} -- incapacità di gestire lo stress ordinario, reazioni
+          emotive sproporzionate che interferiscono con il problem solving
+\end{itemize}
+
+Nonostante la sua rilevanza clinica, la DE è stata storicamente difficile da misurare in
+modo standardizzato, soprattutto in campioni psichiatrici eterogenei.
+
+\subsection{Lo strumento RIPoSt}
+
+Il \textbf{Questionario sulla Reattività, Intensità, Polarità e Stabilità (RIPoSt-40)} è uno
+strumento self-report di 40 item, validato in italiano, che quantifica diversi aspetti della
+DE. Gli item sono valutati su scala Likert da 1 (mai) a 6 (sempre) e si organizzano in
+quattro sottoscale:
+
+\begin{center}
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Sottoscala} & \textbf{Cosa misura} \\
+\midrule
+Instabilità affettiva (AI) & Quanto l'umore oscilla nel tempo \\
+Emotività negativa (N) & Tendenza a emozioni negative intense e frequenti \\
+Emotività positiva (P) & Tendenza a emozioni positive intense e frequenti \\
+Impulsività emotiva (EI) & Incapacità di controllare reazioni impulsive alle emozioni \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A partire da 30 dei 40 item (escludendo la sottoscala di emotività positiva), si calcola il
+punteggio totale di \textbf{Disregolazione Emotiva Negativa (NED)}, con range 39--178.
+Punteggi più alti indicano maggiore gravità della DE.
+
+\subsection{La versione screening: RIPoSt-SV}
+
+La \textbf{RIPoSt-SV} (Screening Version) è un algoritmo a sei item, derivato dalla RIPoSt-40
+tramite un albero decisionale, che classifica ogni paziente come:
+
+\begin{itemize}
+    \item \textbf{CSED+ (True):} presenza di Disregolazione Emotiva Clinicamente Significativa
+    \item \textbf{CSED- (False):} assenza di Disregolazione Emotiva Clinicamente Significativa
+\end{itemize}
+
+La CSED (Clinically Significant Emotional Dysregulation) è definita dalla presenza di almeno
+2 dei 3 criteri qualitativi sopra descritti \textbf{E} una gravità di almeno 4/7 alla Clinical
+Global Impression. Lo strumento è stato sviluppato e validato da Brancati et al. (2024,
+\textit{Journal of Affective Disorders}) e ha mostrato un'accuratezza dell'83\% nel campione
+di test.
+
+\subsection{Obiettivi dell'analisi}
+
+Il campione in studio è composto da \textbf{200 pazienti adulti con diagnosi di ADHD},
+suddivisi nei sottotipi:
+
+\begin{itemize}
+    \item \textbf{INAT} -- sottotipo prevalentemente inattentivo (n = 98)
+    \item \textbf{COMB} -- sottotipo combinato (n = 97)
+    \item \textbf{IPER} -- sottotipo prevalentemente iperattivo (n = 4, solo descrittivo)
+\end{itemize}
+
+L'analisi si propone di rispondere a tre domande principali:
+
+\begin{enumerate}
+    \item Quali variabili cliniche e psicometriche sono \textit{associate} alla gravità della DE
+          e allo stato CSED?
+    \item Quali variabili sono \textit{predittori indipendenti} della DE, cioè aggiungono
+          informazione unica anche quando si tengono in conto tutte le altre variabili?
+    \item I pazienti si raggruppano spontaneamente in \textit{profili clinici} che coincidono
+          con lo stato CSED? E questi profili predicono la CSED meglio o peggio dello strumento
+          RIPoSt-SV?
+\end{enumerate}
+
+Ogni analisi viene eseguita su tre campioni: \textbf{campione completo} (n = 200),
+\textbf{sottotipo INAT} e \textbf{sottotipo COMB}, per verificare se i risultati siano
+consistenti o subtype-specifici.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Il dataset}
+
+\subsection{Struttura generale}
+
+Il dataset contiene 200 righe (pazienti) e 109 colonne (variabili). Ogni riga corrisponde a
+un paziente anonimizzato. Le variabili si dividono in:
+
+\begin{enumerate}
+    \item \textbf{Variabili demografiche}
+    \item \textbf{Variabili cliniche} (diagnosi, comorbilità, anamnesi familiare, farmaci)
+    \item \textbf{Scale psicometriche} (punteggi continui di strumenti standardizzati)
+    \item \textbf{Outcome} (RIPoSt-NED e RIPoSt-SV -- non utilizzati come predittori)
+\end{enumerate}
+
+\subsection{Variabili demografiche}
+
+\begin{center}
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Variabile} & \textbf{Descrizione} \\
+\midrule
+Genere & Sesso del paziente (M=1, F=0 nella codifica) \\
+Age & Età in anni \\
+school\_years & Anni di scolarità \\
+repeated\_grades & Numero di anni scolastici ripetuti \\
+marital\_status & Stato civile (celibe/nubile, sposato/a, divorziato/a) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\nota{Il genere è stato codificato numericamente come M=1, F=0. Una correlazione negativa
+con questa variabile significa che i maschi tendono ad avere punteggi più bassi -- ovvero le
+femmine hanno DE più grave. Questo è coerente con la letteratura sull'ADHD.}
+
+\subsection{Variabili cliniche}
+
+Includono diagnosi di asse I secondo il DSM-5, storia familiare, uso di sostanze e
+trattamento farmacologico. La maggior parte sono variabili \textbf{binarie} (vero/falso):
+
+\begin{center}
+\begin{tabular}{lp{8.5cm}}
+\toprule
+\textbf{Gruppo} & \textbf{Variabili} \\
+\midrule
+Storia familiare & FH\_bipolar, FH\_mood, FH\_neurodev, FH\_anxiety, FH\_psychosis, FH\_suicide, FH\_SUD \\
+Disturbi dell'umore & mood (BD1/BD2/CYC/MDD/NO), mood\_any, mood\_onset \\
+Uso di sostanze & alcool, opioids, cannabis, bdz, cocaine, stimulants, sud\_any \\
+Disturbi d'ansia & panic, agoraphobia, social\_anx, GAD, OCD, anx\_any \\
+Disturbi alimentari & anorexia, bulimia, BED, eat\_any \\
+Altri & Tourette, tic, oppositional, conduct, conversion, somatic \\
+Trattamento & Trattato (trattamento farmacologico in corso) \\
+Anamnesi & first\_referral (età primo contatto psichiatrico), mood\_onset (età esordio umore) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Scale psicometriche}
+
+Le scale sono punteggi \textbf{continui}: valori più alti indicano generalmente maggiore
+gravità sintomatologica.
+
+\begin{center}
+\begin{longtable}{lp{5.5cm}p{4cm}}
+\toprule
+\textbf{Scala} & \textbf{Cosa misura} & \textbf{Colonne nel dataset} \\
+\midrule
+CAARS & Sintomi ADHD (self-report, Conners) & CAARS\_A/B/C/D \\
+BRIEF & Difficoltà di funzionamento esecutivo & BRIEF\_GEC (totale), BRI, MI + 8 sottoscale \\
+FAST & Disabilità funzionale globale & FAST\_TOT + 6 sottoscale \\
+ASRS & Gravità ADHD (self-report adulti) & ASRS \\
+LPFS & Funzionamento della personalità & LPFS\_S (sé), LPFS\_I (interpersonale) \\
+HCL & Sintomi ipomaniacali & HCL\_TOT, HCL\_F1, HCL\_F2 \\
+TEMPS & Temperamento affettivo & TEMPS\_D (depressivo), C (ciclotimico), H (ipertimico), I (irritabile), A (ansioso) \\
+PID & Tratti di personalità (DSM-5) & PID\_NEG, DET, ANT, DIS, ANA, PSY \\
+BIS & Impulsività (Barratt) & BIS\_TOT + BIS\_A/M/P \\
+BRIAN & Ritmi biologici & BRIAN\_TOT + 5 sottoscale \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\subsection{Dati mancanti}
+
+Non tutti i pazienti hanno completato tutte le scale. Le principali lacune sono:
+
+\begin{itemize}
+    \item CAARS: circa 39 valori mancanti ($\sim$20\%)
+    \item BRIEF: circa 40 valori mancanti ($\sim$20\%)
+    \item FAST\_TOT: circa 79 valori mancanti ($\sim$40\%)
+\end{itemize}
+
+\textbf{Strategia adottata: analisi per casi disponibili} (\textit{available-case analysis},
+o \textit{pairwise deletion}). Ogni analisi usa tutti i pazienti che hanno dati validi per
+quella specifica variabile, indipendentemente dai dati mancanti su altre variabili. In questo
+modo non si perde una quota rilevante del campione. Per ogni risultato riportato, viene
+indicato il numero di pazienti effettivamente inclusi (N).
+
+\textbf{Non è stata eseguita alcuna imputazione dei dati mancanti.}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Analisi 1 -- Correlazione di Spearman con RIPoSt-NED}
+
+\subsection{Domanda di ricerca}
+
+\textit{Quali variabili sono associate alla gravità della disregolazione emotiva, misurata
+dal punteggio continuo NED?}
+
+\subsection{Principio del metodo}
+
+La \textbf{correlazione di Spearman} misura quanto due variabili tendono a muoversi insieme,
+in modo ordinato. Non assume che la relazione sia perfettamente lineare, né che i dati
+seguano una distribuzione normale -- lavora sui ranghi, cioè sull'ordine relativo dei valori.
+Per questo è particolarmente adatta a dati psichiatrici, che raramente sono distribuiti in
+modo perfettamente normale.
+
+Il risultato è il \textbf{coefficiente di correlazione $\varrho$ (rho)}, che varia tra
+$-1$ e $+1$:
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+\textbf{Valore di $|\varrho|$} & \textbf{Interpretazione} \\
+\midrule
+0.8 -- 1.0 & Molto forte \\
+0.6 -- 0.8 & Forte \\
+0.4 -- 0.6 & Moderata \\
+0.2 -- 0.4 & Debole \\
+0.0 -- 0.2 & Trascurabile \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Il \textbf{segno} indica la direzione:
+\begin{itemize}
+    \item $\varrho > 0$: al crescere di quella variabile, cresce anche NED (più sintomi = DE
+          più grave)
+    \item $\varrho < 0$: al crescere di quella variabile, NED diminuisce
+\end{itemize}
+
+\subsection{Esempio concreto}
+
+Il temperamento ciclotimico (\textbf{TEMPS\_C}) ha $\varrho = +0.81$ nel campione completo.
+Questo significa che i pazienti con punteggi più alti alla sottoscala del temperamento
+ciclotimico hanno quasi sempre anche punteggi NED più elevati. La relazione è molto
+consistente e forte.
+
+Il punteggio \textbf{Genere} (M=1, F=0) ha $\varrho$ negativo: i maschi tendono ad avere
+punteggi NED più bassi, ovvero le femmine hanno mediamente una DE più grave
+(media NED femmine $\approx 127.6$ vs. maschi $\approx 108.9$).
+
+La variabile \textbf{mood\_onset} (età di esordio del disturbo dell'umore) ha $\varrho$
+negativo: esordio più precoce (numero più basso) è associato a DE più grave (NED più alto).
+
+\subsection{Limiti di questa analisi}
+
+Questa analisi guarda ogni variabile \textbf{una alla volta}. Non tiene conto del fatto che
+molte variabili sono correlate tra loro. Per esempio, TEMPS\_C e ASRS sono entrambe
+fortemente correlate con NED, ma sono anche correlate tra loro. Non possiamo sapere se
+entrambe contribuiscono in modo indipendente, o se una è semplicemente un surrogato dell'altra.
+Questo è il problema che risolve l'Analisi 2.
+
+\subsection{Output generati}
+
+Per ogni campione (completo, INAT, COMB) vengono generati:
+\begin{itemize}
+    \item \texttt{spearman\_results.csv} -- tabella completa con $\varrho$, p-value e N per
+          ogni predittore
+    \item \texttt{demographics.png} -- grafico a barre per le variabili demografiche
+    \item \texttt{clinical.png} -- grafico a barre per le variabili cliniche
+    \item \texttt{scale\_totals.png} -- grafico a barre per i totali delle scale psicometriche
+    \item \texttt{scale\_subscales.png} -- grafico a barre per le sottoscale
+\end{itemize}
+
+Nei grafici, le barre \textbf{colorate} (blu scuro = correlazione positiva significativa,
+rosso scuro = correlazione negativa significativa) indicano associazioni statisticamente
+rilevanti (p $<$ 0.05); le barre chiare indicano associazioni non significative.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Analisi 2 -- Regressione Lineare LASSO su RIPoSt-NED}
+
+\subsection{Domanda di ricerca}
+
+\textit{Quali variabili predicono la gravità della DE in modo indipendente, cioè dopo aver
+tenuto in conto tutte le altre variabili contemporaneamente?}
+
+\subsection{Il problema della multicollinearità}
+
+L'Analisi 1 mostra che molte variabili sono associate alla DE. Ma molte di queste variabili
+sono anche associate tra loro. Per esempio, TEMPS\_C e ASRS sono entrambe elevate nei
+pazienti con DE grave, ma sono anche correlate tra loro. La domanda quindi diventa:
+
+\textit{Sapendo già il punteggio TEMPS\_C di un paziente, l'ASRS aggiunge qualcosa di nuovo?
+O mi sta solo ridando la stessa informazione?}
+
+La \textbf{regressione lineare multipla} risponde a questa domanda: include tutte le variabili
+contemporaneamente e stima il contributo \textit{indipendente} di ciascuna.
+
+\subsection{Il problema del sovraffittamento e la soluzione LASSO}
+
+Con 98 predittori e solo 200 pazienti, la regressione standard è inaffidabile: il modello
+troverebbe pattern casuali nei dati che non si riplicherebbero su nuovi pazienti. Questo
+fenomeno si chiama \textbf{sovraffittamento} (\textit{overfitting}).
+
+Il metodo \textbf{LASSO} (Least Absolute Shrinkage and Selection Operator) risolve questo
+problema aggiungendo una \textit{penalità} per ogni variabile inclusa nel modello. Per
+sopravvivere, una variabile deve contribuire abbastanza da giustificare il costo. Il
+risultato: la maggior parte dei coefficienti vengono portati esattamente a zero, e solo le
+variabili con un segnale indipendente reale sopravvivono.
+
+\subsection{La cross-validazione a 5 fold}
+
+La forza della penalità (parametro $\alpha$) non viene scelta manualmente, ma tramite
+\textbf{cross-validazione a 5 fold}:
+
+\begin{enumerate}
+    \item I 200 pazienti vengono divisi in 5 gruppi da 40
+    \item Il modello viene addestrato su 4 gruppi (160 pazienti) e testato sul 5° (40 pazienti)
+    \item Questo si ripete 5 volte, lasciando ogni volta fuori un gruppo diverso
+    \item Si sceglie il $\alpha$ che minimizza l'errore medio sui 5 test
+\end{enumerate}
+
+Questo garantisce che la performance riportata sia una stima onesta di come il modello si
+comporterebbe su un paziente nuovo, mai visto prima.
+
+\subsection{Cosa si legge dai risultati}
+
+\begin{itemize}
+    \item \textbf{Variabili sopravvissute al LASSO:} sono quelle con un contributo
+          indipendente reale. Nel campione completo, 15 variabili su 98 sono sopravvissute.
+    \item \textbf{Coefficiente $\beta$:} indica direzione e forza del contributo indipendente.
+          $\beta > 0$ significa che punteggi più alti su quella variabile predicono NED più
+          alto. $\beta < 0$ significa il contrario. Valori di $|\beta|$ più grandi indicano
+          un contributo maggiore.
+    \item \textbf{R² cross-validato $\approx 0.77$:} il modello spiega il 77\% della varianza
+          nel punteggio NED. È un risultato molto buono per dati psichiatrici.
+    \item \textbf{RMSE $\approx 14.5$:} in media, la previsione del modello si scosta di
+          circa 14.5 punti dal valore reale (su una scala 39--178).
+\end{itemize}
+
+\subsection{Esempio concreto}
+
+TEMPS\_C ha $\beta \approx +9.78$ e ASRS ha $\beta \approx +6.13$. Entrambe sopravvivono
+al LASSO, il che significa che ciascuna contribuisce in modo indipendente alla gravità
+della DE: sapere il temperamento ciclotimico di un paziente non rende inutile conoscere
+la sua gravità ADHD all'ASRS, e viceversa. Sono due informazioni distinte.
+
+Al contrario, molte variabili che correlano con NED nell'Analisi 1 scompaiono nell'Analisi 2,
+perché la loro associazione con NED è mediata da TEMPS\_C o ASRS: non aggiungono nulla di
+nuovo.
+
+\nota{Una variabile eliminata dal LASSO non è necessariamente priva di interesse clinico.
+Potrebbe semplicemente veicolare la stessa informazione di una variabile sopravvissuta.
+Per esempio, se TEMPS\_C e HCL\_TOT (sintomi ipomaniacali) sono molto correlati tra loro,
+LASSO tende a tenere solo uno dei due. Questo non significa che HCL\_TOT sia clinicamente
+irrilevante.}
+
+\subsection{Output generati}
+
+Per ogni campione:
+\begin{itemize}
+    \item \texttt{lasso\_coefficients.csv} -- variabili sopravvissute con i relativi $\beta$
+    \item \texttt{lasso\_metrics.csv} -- R², RMSE, parametro $\alpha$ ottimale, N
+    \item \texttt{lasso\_coefficients.png} -- grafico a barre dei $\beta$ sopravvissuti
+\end{itemize}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Analisi 3 -- Analisi di Associazione: CSED+ vs CSED-}
+
+\subsection{Domanda di ricerca}
+
+\textit{Per ogni variabile, i pazienti che risultano positivi allo screening CSED (RIPoSt-SV
+= True) sono diversi da quelli negativi?}
+
+\subsection{Logica del confronto tra gruppi}
+
+Le Analisi 1 e 2 usavano NED come outcome \textbf{continuo} (gravità). L'Analisi 3 cambia
+prospettiva e usa la \textbf{RIPoSt-SV} come outcome \textbf{binario}: ogni paziente è
+CSED+ o CSED-.
+
+I 200 pazienti vengono divisi in due gruppi: CSED+ (n = 132) e CSED- (n = 68). Per ogni
+variabile predittrice, si testa se i due gruppi differiscono significativamente.
+
+\subsection{Due test diversi per due tipi di variabili}
+
+\subsubsection{Variabili continue (punteggi delle scale)}
+
+Test utilizzato: \textbf{Mann-Whitney U}
+
+Questo test non assume che i dati seguano una distribuzione normale. Confronta i ranghi
+dei valori nei due gruppi: se i pazienti CSED+ tendono ad avere ranghi sistematicamente
+più alti su quella scala, il test risulta significativo.
+
+Misura dell'effetto: \textbf{correlazione rank-biseriale r}, che varia tra $-1$ e $+1$:
+\begin{itemize}
+    \item $r > 0$: i pazienti CSED+ hanno \textbf{punteggi più alti} su quella variabile
+    \item $r < 0$: i pazienti CSED+ hanno \textbf{punteggi più bassi} su quella variabile
+    \item $|r| \geq 0.5$: effetto grande
+\end{itemize}
+
+\textbf{Esempio:} TEMPS\_C ha $r = +0.64$. I pazienti CSED+ hanno punteggi di temperamento
+ciclotimico significativamente più alti di quelli CSED-.
+
+\textbf{Esempio:} mood\_onset (età di esordio del disturbo dell'umore) ha $r$ negativo.
+I pazienti CSED+ hanno avuto un esordio più precoce del disturbo dell'umore -- l'esordio
+precoce è associato alla DE clinicamente significativa.
+
+\subsubsection{Variabili binarie/categoriali (comorbilità, storia familiare)}
+
+Test utilizzato: \textbf{Chi-quadro} o \textbf{test esatto di Fisher} (quando i numeri
+attesi sono piccoli)
+
+Questi test verificano se la frequenza di una condizione (per esempio: presenza di un
+disturbo d'ansia) è distribuita diversamente tra CSED+ e CSED-.
+
+Misura dell'effetto: \textbf{V di Cramér}, che varia tra 0 e 1:
+\begin{itemize}
+    \item 0: nessuna associazione
+    \item 1: associazione perfetta
+    \item \textbf{Attenzione:} la V di Cramér non ha segno -- indica la \textit{forza}
+          dell'associazione ma non la direzione. Per sapere se una condizione è più frequente
+          in CSED+ o CSED-, occorre guardare le frequenze nel file CSV.
+\end{itemize}
+
+\textbf{Esempio:} mood\_any (presenza di qualsiasi disturbo dell'umore) ha una V di Cramér
+significativa. Questo significa che la distribuzione dei disturbi dell'umore è diversa tra
+i due gruppi. Dalla tabella delle frequenze si evince in quale gruppo siano più rappresentati.
+
+\subsection{Limiti di questa analisi}
+
+Come l'Analisi 1, anche questa analisi testa ogni variabile \textbf{individualmente}. Una
+variabile può risultare significativa semplicemente perché è correlata con un'altra variabile
+che è il vero driver. L'Analisi 4 affronta questo problema.
+
+\subsection{Output generati}
+
+Per ogni campione:
+\begin{itemize}
+    \item \texttt{association\_results.csv} -- tabella completa con dimensione d'effetto,
+          p-value, N e test utilizzato per ogni predittore
+    \item \texttt{demographics.png}, \texttt{clinical.png}, \texttt{scale\_totals.png},
+          \texttt{scale\_subscales.png} -- grafici a barre per gruppo di variabili
+\end{itemize}
+
+Nei grafici, le barre colorate indicano significatività statistica (p $<$ 0.05):
+blu scuro = effetto positivo significativo; rosso scuro = effetto negativo significativo.
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Analisi 4 -- Regressione Logistica LASSO su RIPoSt-SV}
+
+\subsection{Domanda di ricerca}
+
+\textit{Quali variabili predicono in modo indipendente l'essere CSED+, e di quanto aumentano
+o diminuiscono le probabilità di un esito positivo allo screening?}
+
+\subsection{Differenza rispetto all'Analisi 3}
+
+L'Analisi 3 guardava ogni variabile \textbf{una alla volta}. L'Analisi 4 le include
+\textbf{tutte insieme} in un unico modello, permettendo di identificare quelle che contribuiscono
+in modo genuinamente indipendente.
+
+\textbf{Esempio pratico:} TEMPS\_C e ASRS sono entrambe più alte nei CSED+ (Analisi 3).
+Ma sono anche correlate tra loro. L'Analisi 4 risponde: \textit{"Sapendo già TEMPS\_C,
+l'ASRS cambia qualcosa alla nostra previsione di essere CSED+?"} Se sì, entrambe sopravvivono
+al modello. Se no, una delle due viene eliminata.
+
+\subsection{Principio della regressione logistica}
+
+La regressione logistica è il metodo standard per predire un outcome binario (sì/no,
+positivo/negativo) a partire da più variabili. Produce un modello che stima, per ogni
+paziente, la \textbf{probabilità di essere CSED+} in base al suo profilo clinico e
+psicometrico. Come nell'Analisi 2, viene applicata la penalità LASSO per eliminare le
+variabili ridondanti.
+
+\subsection{Come si interpretano i risultati}
+
+Il risultato chiave è l'\textbf{odds ratio (OR)}:
+
+\begin{equation*}
+\text{OR} = e^{\beta}
+\end{equation*}
+
+\begin{itemize}
+    \item \textbf{OR $>$ 1:} quella variabile \textbf{aumenta} le probabilità di essere CSED+
+    \item \textbf{OR $<$ 1:} quella variabile \textbf{diminuisce} le probabilità di essere CSED+
+    \item \textbf{OR = 1:} nessun effetto
+\end{itemize}
+
+\textbf{Esempio:} Nel campione completo, TEMPS\_C ha OR $\approx$ 1.76. Questo significa
+che, per ogni punto in più nel punteggio del temperamento ciclotimico, le probabilità di
+risultare CSED+ sono 1.76 volte più alte -- indipendentemente da ASRS, BRIAN\_ACT e tutte
+le altre variabili nel modello.
+
+\textbf{Attenzione all'interpretazione:} gli OR qui riportati si riferiscono a variabili
+\textit{standardizzate}, quindi l'OR non è per un incremento di una singola unità grezza,
+ma per un incremento di una deviazione standard. Questo permette di confrontare l'entità
+degli effetti tra scale con unità diverse.
+
+\subsection{Performance del modello}
+
+\begin{itemize}
+    \item \textbf{AUC cross-validata $\approx$ 0.80:} l'AUC (Area Under the Curve) misura la
+          capacità del modello di distinguere CSED+ da CSED-. 0.5 = casuale, 1.0 = perfetto.
+          0.80 indica una buona discriminazione.
+    \item \textbf{Accuratezza cross-validata $\approx$ 76\%:} il modello classifica
+          correttamente circa 3 pazienti su 4. Per confronto, la RIPoSt-SV raggiunge l'83\%
+          nel campione di test della pubblicazione originale.
+\end{itemize}
+
+\nota{Il fatto che il modello logistico (76\%) sia meno accurato della RIPoSt-SV (83\%) è
+un risultato clinicamente rilevante, non un fallimento dell'analisi. Significa che il profilo
+clinico e psicometrico complessivo non è in grado di identificare la CSED con la stessa
+precisione dello strumento specificamente costruito per farlo. Questo \textbf{valida la
+RIPoSt-SV} come strumento che cattura qualcosa di specifico, non riducibile al profilo
+clinico generale.}
+
+\subsection{Output generati}
+
+Per ogni campione:
+\begin{itemize}
+    \item \texttt{logistic\_coefficients.csv} -- variabili sopravvissute con $\beta$ e OR
+    \item \texttt{logistic\_metrics.csv} -- AUC, accuratezza, C ottimale, N, CSED+/CSED-
+    \item \texttt{logistic\_coefficients.png} -- grafico a barre con $\beta$ e OR indicati
+          nelle etichette
+\end{itemize}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Analisi 5 -- Clustering e Confronto con RIPoSt-SV}
+
+\subsection{Domanda di ricerca}
+
+\textit{I pazienti con ADHD si raggruppano spontaneamente in profili clinici distinti? E
+questi profili predicono la CSED meglio o peggio della RIPoSt-SV?}
+
+\subsection{Una logica completamente diversa}
+
+Tutte le analisi precedenti partivano da un outcome (NED o RIPoSt-SV) e chiedevano quali
+variabili lo predicessero. Il clustering è \textbf{non supervisionato}: non guarda l'outcome.
+Guarda solo i pazienti e chiede:
+
+\textit{"Guardando esclusivamente i punteggi delle scale psicometriche, questi 200 pazienti
+si assomigliano tutti, o si dividono in gruppi naturali con profili distinti?"}
+
+Solo \textit{dopo} aver identificato i gruppi, si va a vedere quanti CSED+ ci sono in
+ciascun gruppo.
+
+\subsection{Come funziona il K-means}
+
+L'algoritmo \textbf{K-means} divide i pazienti in k gruppi (cluster) in modo che:
+\begin{itemize}
+    \item I pazienti \textbf{nello stesso cluster} siano il più simili possibile tra loro
+          (punteggi simili su tutte le scale)
+    \item I pazienti in \textbf{cluster diversi} siano il più diversi possibile
+\end{itemize}
+
+Il numero di cluster (k) non viene scelto a priori, ma viene determinato automaticamente
+testando da k=2 a k=6 e scegliendo il valore che produce i gruppi più netti e ben separati,
+misurato dal \textbf{punteggio silhouette} (più alto = gruppi meglio definiti). In tutti i
+campioni analizzati, k=2 è risultato ottimale.
+
+\subsection{Cosa si fa dopo il clustering}
+
+Una volta assegnati i pazienti ai cluster:
+
+\begin{enumerate}
+    \item Si calcola la \textbf{percentuale di CSED+} in ogni cluster
+    \item Si assegna a ogni cluster l'\textbf{etichetta di maggioranza} (se il 70\% dei
+          pazienti in quel cluster è CSED+, il cluster viene etichettato "CSED+")
+    \item Si usa questa etichetta come classificatore e si calcola l'\textbf{accuratezza} --
+          quanti pazienti vengono classificati correttamente rispetto alla loro vera RIPoSt-SV
+    \item Si confronta questa accuratezza con quella di riferimento della RIPoSt-SV (83\%)
+\end{enumerate}
+
+\subsection{I risultati e la loro interpretazione}
+
+L'accuratezza del clustering è risultata del \textbf{66--69\%} in tutti i campioni,
+significativamente inferiore all'83\% della RIPoSt-SV.
+
+Questo è un risultato clinicamente importante. Significa che \textbf{il raggruppamento
+naturale dei pazienti ADHD in base al loro profilo clinico e psicometrico non coincide con
+la distinzione tra CSED+ e CSED-}. Essere CSED+ non equivale semplicemente all'essere un
+paziente ADHD ``più grave'' su tutte le dimensioni: è una caratteristica clinica specifica
+che richiede uno strumento dedicato per essere identificata in modo affidabile.
+
+Questo risultato \textbf{valida la RIPoSt-SV}: lo strumento cattura qualcosa di specifico
+che la profilazione clinica generale non riesce a cogliere con la stessa precisione.
+
+\subsection{Il profilo dei cluster}
+
+L'aspetto più interessante dal punto di vista clinico è l'\textbf{heatmap del profilo dei
+cluster}: mostra per ogni scala se i pazienti di quel cluster punteggiano sopra o sotto la
+media (standardizzata). Permette di rispondere a domande come:
+\begin{itemize}
+    \item Quali scale distinguono meglio i due cluster?
+    \item Il cluster con più CSED+ ha anche impulsività più alta? Ritmi biologici più alterati?
+          Temperamento più ciclotimico?
+\end{itemize}
+
+\subsection{Output generati}
+
+Per ogni campione:
+\begin{itemize}
+    \item \texttt{silhouette\_scores.png} -- punteggio silhouette per k da 2 a 6 (motiva la
+          scelta di k)
+    \item \texttt{cluster\_profiles.png} -- heatmap dei punteggi medi standardizzati per cluster
+    \item \texttt{csed\_rate\_per\_cluster.png} -- percentuale CSED+ per cluster
+    \item \texttt{cluster\_assignments.csv} -- cluster e etichetta predetta per ogni paziente
+    \item \texttt{clustering\_metrics.csv} -- k ottimale, silhouette, accuratezza, confronto 83\%
+    \item \texttt{confusion\_matrix.csv} -- etichette vere vs. predette (CSED+ / CSED-)
+\end{itemize}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Riepilogo delle analisi}
+
+\begin{center}
+\begin{longtable}{p{1.5cm}p{3cm}p{3.5cm}p{5cm}}
+\toprule
+\textbf{Analisi} & \textbf{Outcome} & \textbf{Metodo} & \textbf{Domanda a cui risponde} \\
+\midrule
+1 & RIPoSt-NED (continuo) & Correlazione di Spearman & Quali variabili variano insieme alla gravità della DE? \\
+\addlinespace
+2 & RIPoSt-NED (continuo) & Regressione lineare LASSO & Quali variabili predicono la gravità in modo indipendente? \\
+\addlinespace
+3 & RIPoSt-SV (binario) & Mann-Whitney / Chi-quadro + dimensione d'effetto & CSED+ e CSED- differiscono su questa variabile? \\
+\addlinespace
+4 & RIPoSt-SV (binario) & Regressione logistica LASSO & Quali variabili predicono indipendentemente la CSED? \\
+\addlinespace
+5 & Nessuno (non supervisionato) & K-means + confronto & I pazienti si raggruppano in profili che coincidono con CSED? \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+Ogni analisi viene eseguita su tre campioni:
+
+\begin{itemize}
+    \item \textbf{Campione completo} (n = 200): massima potenza statistica, risultato di riferimento
+    \item \textbf{Sottotipo INAT} (n = 98): risultati specifici per pazienti inattentivi
+    \item \textbf{Sottotipo COMB} (n = 97): risultati specifici per pazienti con sottotipo combinato
+\end{itemize}
+
+% ──────────────────────────────────────────────────────────────────────────────
+\section{Note metodologiche finali}
+
+\subsection{Significatività statistica e dimensione dell'effetto}
+
+Un risultato statisticamente significativo (p $<$ 0.05) non garantisce rilevanza clinica.
+Con campioni di 200 pazienti, anche effetti molto piccoli possono risultare significativi.
+Per questo motivo, in tutte le analisi vengono riportate le \textbf{dimensioni dell'effetto}
+(correlazione di Spearman, rank-biserial r, V di Cramér, OR) che permettono di valutare la
+\textit{grandezza pratica} della differenza, indipendentemente dalla significatività.
+
+\subsection{Analisi univariate vs. multivariate}
+
+Le Analisi 1 e 3 sono \textbf{univariate}: testano ogni variabile in isolamento. Un risultato
+significativo non implica causalità o indipendenza dal resto del profilo clinico.
+
+Le Analisi 2 e 4 sono \textbf{multivariate}: controllano per tutte le variabili simultaneamente.
+Sono più conservative ma più informative sulla struttura causale.
+
+La lettura integrata di analisi univariate e multivariate è la più ricca: le variabili che
+risultano significative sia in isolamento (Analisi 1/3) che nel modello multivariato
+(Analisi 2/4) sono quelle con il segnale più robusto e indipendente.
+
+\subsection{Confronto tra sottotipi}
+
+Variabili significative nel campione completo ma non nei sottotipi separati possono riflettere
+semplicemente la riduzione di potenza statistica (da n=200 a n$\approx$98). Variabili
+significative in un sottotipo ma non nell'altro possono invece indicare genuina eterogeneità
+biologica o clinica tra INAT e COMB.
+
+\bigskip
+
+\hrule
+\bigskip
+
+\noindent\small\textbf{Riferimento bibliografico:}
+
+Brancati GE, De Rosa U, Acierno D, et al. (2024). Development of a self-report screening
+instrument for emotional dysregulation: the Reactivity, Intensity, Polarity and Stability
+questionnaire, screening version (RIPoSt-SV). \textit{Journal of Affective Disorders},
+355, 406--414. \url{https://doi.org/10.1016/j.jad.2024.03.167}
+
+\end{document}
