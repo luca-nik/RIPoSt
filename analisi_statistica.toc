@@ -1,0 +1,53 @@
+\contentsline {section}{\numberline {1}Introduzione e obiettivi dello studio}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Contesto clinico}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Lo strumento RIPoSt}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}La versione screening: RIPoSt-SV}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Obiettivi dell'analisi}{4}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Il dataset}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Struttura generale}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Variabili demografiche}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Variabili cliniche}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Scale psicometriche}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Dati mancanti}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Analisi 1 -- Correlazione di Spearman con RIPoSt-NED}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Domanda di ricerca}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Principio del metodo}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Esempio concreto}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Limiti di questa analisi}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Output generati}{7}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Analisi 2 -- Regressione Lineare LASSO su RIPoSt-NED}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Domanda di ricerca}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Il problema della multicollinearità}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Il problema del sovraffittamento e la soluzione LASSO}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}La cross-validazione a 5 fold}{8}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Cosa si legge dai risultati}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Esempio concreto}{9}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Output generati}{9}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Analisi 3 -- Analisi di Associazione: CSED+ vs CSED-}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Domanda di ricerca}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Logica del confronto tra gruppi}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Due test diversi per due tipi di variabili}{10}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Variabili continue (punteggi delle scale)}{10}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Variabili binarie/categoriali (comorbilità, storia familiare)}{10}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Limiti di questa analisi}{10}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Output generati}{11}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Analisi 4 -- Regressione Logistica LASSO su RIPoSt-SV}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Domanda di ricerca}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Differenza rispetto all'Analisi 3}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Principio della regressione logistica}{11}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Come si interpretano i risultati}{11}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Performance del modello}{12}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Output generati}{12}{subsection.6.6}%
+\contentsline {section}{\numberline {7}Analisi 5 -- Clustering e Confronto con RIPoSt-SV}{12}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Domanda di ricerca}{12}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Una logica completamente diversa}{12}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Come funziona il K-means}{13}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Cosa si fa dopo il clustering}{13}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}I risultati e la loro interpretazione}{13}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Il profilo dei cluster}{13}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Output generati}{14}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Riepilogo delle analisi}{14}{section.8}%
+\contentsline {section}{\numberline {9}Note metodologiche finali}{15}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Significatività statistica e dimensione dell'effetto}{15}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Analisi univariate vs. multivariate}{15}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Confronto tra sottotipi}{15}{subsection.9.3}%

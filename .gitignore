@@ -2,7 +2,7 @@
 .venv/
 
 # Output (generated files, not source)
-output/
+#output/
 
 # Python
 __pycache__/
