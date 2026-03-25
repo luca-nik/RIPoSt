@@ -1,0 +1,20 @@
+# Virtual environment
+.venv/
+
+# Output (generated files, not source)
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Data (private — do not commit)
+*.xlsx
+*.csv
+*.xls
+
+# OS
+.DS_Store
+Thumbs.db
