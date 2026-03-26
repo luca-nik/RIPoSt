@@ -194,74 +194,12 @@ risponde con una formula fissa (vedi Sezione 5).
 
 ## 4. Skills e competenze necessarie
 
-### 4.1 Comprensione del dominio medico
+Le skills dell'agente sono definite in dettaglio nel documento [`SKILLS_BLUEPRINT.md`](SKILLS_BLUEPRINT.md),
+che costituisce la specifica operativa di questo blueprint. Per ogni skill sono indicati:
+scope, criteri di applicabilità, formati di output standard e linee guida linguistiche.
 
-- Vocabolario clinico di base: diagnosi, comorbilità, onset, remissione, follow-up,
-  scala Likert, CGI, PHQ, HAM-D, strumenti self-report vs. clinician-rated
-- Conoscenza delle principali scale psicometriche usate in psichiatria, neurologia,
-  cardiologia, oncologia
-- Comprensione della differenza tra studi osservazionali, longitudinali e trial clinici
-- Riconoscimento di variabili outcome vs. predittori vs. confounders
-- Conoscenza delle convenzioni di encoding comuni in medicina (0/1, M/F, presenza/assenza)
-- Consapevolezza del contesto regolatorio (dati sensibili, privacy, GDPR)
-
-### 4.2 Competenze statistiche
-
-**Statistiche descrittive:**
-- Media, mediana, deviazione standard, range, distribuzione
-- Tabelle di frequenza per variabili categoriali
-- Identificazione di outlier e distribuzione dei dati mancanti
-
-**Test di associazione e confronto:**
-- Correlazione di Pearson e Spearman (e quando usare quale)
-- Test t di Student e Mann-Whitney U per confronto tra due gruppi
-- ANOVA e Kruskal-Wallis per confronto tra più gruppi
-- Chi-quadro e test esatto di Fisher per variabili categoriali
-- Dimensioni dell'effetto: Cohen's d, rank-biserial r, Cramér's V, eta-quadro
-
-**Modelli predittivi:**
-- Regressione lineare multipla
-- Regressione logistica
-- Regolarizzazione LASSO e Ridge per selezione delle variabili
-- Cross-validazione k-fold e valutazione della performance (R², AUC, accuracy,
-  sensitivity, specificity)
-- Interpretazione degli odds ratio
-
-**Analisi non supervisionate:**
-- Clustering K-means e gerarchico
-- Selezione del numero ottimale di cluster (silhouette score, elbow method)
-- Analisi delle componenti principali (PCA) per riduzione dimensionale
-
-**Gestione dei dati mancanti:**
-- Available-case analysis (pairwise deletion)
-- Imputazione semplice (media, mediana)
-- Imputazione multipla (MICE) — quando e perché
-- Analisi di sensibilità
-
-**Concetti fondamentali:**
-- Differenza tra correlazione e causalità
-- Significatività statistica vs. rilevanza clinica
-- Correzione per test multipli (Bonferroni, FDR)
-- Potenza statistica e dimensione del campione
-- Multicollinearità e come gestirla
-
-### 4.3 Comunicazione con non esperti
-
-- Spiegare concetti statistici con analogie cliniche o della vita quotidiana
-- Calibrare automaticamente il livello di dettaglio in base alle risposte del medico
-- Fare domande una alla volta, non sopraffare con liste
-- Riformulare e chiedere conferma quando c'è ambiguità
-- Usare esempi tratti dai dati reali del medico, non esempi astratti
-- Segnalare i limiti senza essere allarmista o sminuire il lavoro del medico
-
-### 4.4 Ingegneria del software
-
-- Lettura di file Excel, CSV, SPSS (.sav), REDCap exports
-- Python: pandas, numpy, scipy, scikit-learn, matplotlib, seaborn, statsmodels
-- Produzione di output riproducibili e ben documentati
-- Gestione robusta degli errori (dati corrotti, variabili costanti, campioni troppo piccoli)
-- Codice modulare: ogni analisi come funzione indipendente
-- Logging delle sessioni per review
+Questo documento descrive l'architettura complessiva e il flusso operativo; `SKILLS_BLUEPRINT.md`
+descrive come ogni competenza deve essere esercitata in pratica.
 
 ---
 
